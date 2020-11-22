@@ -1,13 +1,6 @@
-#define DEBUG 0
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#ifdef DEBUG
-#include <unistd.h>
-#define wait(x) sleep(x)
-#endif
 
 #define KNEXT '>'
 #define KPREV '<'
@@ -51,8 +44,7 @@ int numberify(const char* input_buffer, long start, long len) {
 }
 
 void parse(long start, const char* input_buffer, long len, registry* main_reg) {
-    for (int i = start; i < len; i++) {
-        //printf("%i %i", main_reg->size, main_reg->pointer);
+    for (long i = start; i < len; i++) {
         switch (input_buffer[i])
         {
         case KNEXT:
@@ -84,13 +76,14 @@ void parse(long start, const char* input_buffer, long len, registry* main_reg) {
             break;
         case KIN:
             ;
-            char input[255];
-            gets(input);
-            for (int j = main_reg->pointer; j <= strlen(input); j++) {
-                printf("%i\n" ,main_reg->size);
-                mv_ptr(main_reg, 1);
-                main_reg->registers[main_reg->pointer] = input[j];
-            }
+	    char* buffer = malloc(256);
+	    fgets(buffer, 256, stdin);
+	    
+	    for (unsigned long j = 0; j < strlen(buffer); j++) {
+	    	mv_ptr(main_reg, 1);
+		    main_reg->registers[main_reg->pointer - 1] = buffer[j];
+	    }
+
             break;
 
         default:

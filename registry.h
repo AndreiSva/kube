@@ -1,3 +1,6 @@
+#ifndef __kregistry
+#define __kregistry
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -9,3 +12,5 @@ typedef struct registry {
 
 registry* init_reg();
 void mv_ptr(registry* reg, int relative_pos);
+
+#endif
