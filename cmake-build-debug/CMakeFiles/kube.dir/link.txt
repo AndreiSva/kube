@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -rdynamic CMakeFiles/kube.dir/kubic.c.o CMakeFiles/kube.dir/registry.c.o  -o kube 

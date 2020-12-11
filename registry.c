@@ -20,7 +20,10 @@ void mv_ptr(registry* reg, int relative_pos) {
         new_registers[reg->pointer] = 0;
 
         reg->registers = new_registers;
-    } else if (reg->pointer + relative_pos < reg->size && reg->pointer + relative_pos >= 0) {
+        return;
+    } else if (reg->pointer + relative_pos < 0) {
+        return;
+    } else {
         reg->pointer += relative_pos;
     }
 }
