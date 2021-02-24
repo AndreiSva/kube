@@ -7,6 +7,7 @@
         \/         \/     \/ 
 ```
 
+NOTE: This was mostly made as a side project for me to get more accustomed to programming in C. That being said, I might update this in the future to include more complex features. Feel free to take a look at [planned features](https://github.com/AndreiSva/kube/#planned-features).
 
 kube is an esoteric programming language very similar to [BrainF](https://gist.github.com/roachhd/dce54bec8ba55fb17d3a). It has most of it's features with a few tweaks and quality of life imrpovements and tools to make more powerful programs.
 
@@ -90,4 +91,8 @@ register values:
 [65][110][100][114][101][105]
 ```
 
-thats all there is! More documentation comming soon.
+# planned features
+
+* ### File IO
+* ### Socket IO
+* ### OS specific syscall integration
