@@ -90,9 +90,3 @@ register values:
 ```
 [65][110][100][114][101][105]
 ```
-
-# planned features
-
-* ### File IO
-* ### Socket IO
-* ### OS specific syscall integration
